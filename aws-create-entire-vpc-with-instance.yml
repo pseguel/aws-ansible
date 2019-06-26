@@ -28,7 +28,7 @@
         - name_zone: example.com
         - volume_type: standard
         - attendee: 'Robert Calva'
-        - aws_keypair: ansible-workshop-keypair
+        - aws_keypair: ansible-tests
   tasks:
   - name: Create the VPC in AWS "{{ aws_region }}"
     ec2_vpc:
