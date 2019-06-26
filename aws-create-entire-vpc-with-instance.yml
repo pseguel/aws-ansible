@@ -30,7 +30,7 @@
         - attendee: 'Robert Calva'
         - aws_keypair: ansible-tests
   tasks:
-  - name: Create the VPC in AWS "{{ aws_region }}"
+  - name: Create the VPC in AWS 
     ec2_vpc:
         state: present
         cidr_block: 192.168.0.0/16
