@@ -142,35 +142,3 @@
       instance_ip: "{{ item.public_ip }}"
     with_items: "{{ ec2.instances }}"
 
-- name: Configuring Instance
-  hosts: launched
-  gather_facts: False
-  remote_user: ec2-user
-  sudo: yes
-  
-  tasks:
-  - name: Install Apache
-    yum:
-      name: httpd
-      state: latest
-      
-  - name: Start Apache Service
-    service:
-      name: httpd
-      state: started
-      enabled: yes
-
-- name: Sending E-mail to Users
-  hosts: localhost
-  gather_facts: False
-  connection: local
-  tasks:
-  - name: Send email to students with AWS information
-    sendgrid:
-      api_key: "{{ sendgrid_api_key }}"
-      subject: "{{ sendgrid_subject }}"
-      body: "{{ sendgrid_body }}"
-      to_addresses: "{{ user_email }}"
-      html_body: yes
-      from_address: "{{ sendgrid_from_address }}"
-    delegate_to: localhost
