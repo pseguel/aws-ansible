@@ -142,6 +142,3 @@
       instance_ip: "{{ item.public_ip }}"
     with_items: "{{ ec2.instances }}"
 
-plugin: aws_ec2
-regions:
-  - us-east-1
