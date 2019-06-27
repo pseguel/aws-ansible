@@ -32,6 +32,7 @@
   - name: Create the VPC in AWS
     vars:
       vpc_name: vpc{{ rpfx }}
+      instance_name: rhel{{ rpfx}}
     ec2_vpc_net:
       state: present
       name: "Workshop VPC {{ vpc_name }}"
