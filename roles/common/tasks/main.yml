@@ -12,7 +12,7 @@
   vars:
     packages:
     - cockpit
-    - cockpit-dashboard
+    #- cockpit-dashboard
    
 - name: Allow external connections to port 9090 through the firewall
   firewalld: immediate=yes port={{ cockpit_port }}/tcp state=enabled permanent=yes
