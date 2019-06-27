@@ -31,8 +31,7 @@
 
   - name: Create the VPC in AWS
     vars:
-      vpc_name: vpc{{ rpfx }}
-      instance_name: rhel{{ rpfx}}
+      vpc_name: "vpc{{ rpfx }}"
     ec2_vpc_net:
       state: present
       name: "Workshop VPC {{ vpc_name }}"
@@ -104,6 +103,8 @@
 
   
   - name: Creating an AWS Instance in our VPC 
+    vars:
+      instance_name: "linux{{ rpfx }}"
     ec2:
       key_name: "{{ aws_keypair }}"
       group: aws-workshop-sec-group
