@@ -1,7 +1,4 @@
 ---
-- name: Use shadow template
-  template: src=shadow dest=/etc
-
 - name: Install Firewalld
   yum: name=firewalld state=present
   
