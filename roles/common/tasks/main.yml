@@ -9,7 +9,8 @@
   yum: 
     name: "{{ packages }}" 
     state: present
-  packages:
+  vars:
+    packages:
     - cockpit
     - cockpit-dashboard
    
