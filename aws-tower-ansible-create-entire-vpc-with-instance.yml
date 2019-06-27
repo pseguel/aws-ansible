@@ -23,7 +23,7 @@
   gather_facts: False
   connection: local
   tasks:
-  - name: Create the VPC in AWS {{ aws_region }}
+  - name: Create the VPC in AWS
     ec2_vpc_net:
       state: present
       name: "Workshop VPC {{ vpc_name }}"
