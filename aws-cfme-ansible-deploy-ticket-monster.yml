@@ -2,7 +2,7 @@
   hosts: all
   gather_facts: True
   become: yes
-  remote_user: centos
+  remote_user: ec2-user
   become_method: sudo
   
   roles:
